@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgb(167, 166, 166);
+}
+.miu-logo img {
+  width: 250px;
+  margin: 25px;
+}
+nav ul {
+  list-style: none;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+}
+nav ul li:after {
+  content: "";
+  background-color: red;
+  margin: auto;
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+}
+nav ul li:hover:after {
+  width: 100%;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.humberger-menu {
+  display: none;
+  margin-right: 50px;
+}
+.first,
+.second,
+.third {
+  background-color: black;
+  width: 20px;
+  height: 2px;
+  margin-bottom: 6px;
+  display: block;
+}
+@media (max-width: 950px) {
+  .humberger-menu {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}
