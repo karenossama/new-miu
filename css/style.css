@@ -141,3 +141,57 @@ a.active {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
+/* footer */
+footer{
+  position:absolute;
+  bottom:0;
+  background-color: blueviolet;
+  width: 100%;
+  left: 0;
+}
+.list{
+  display: flex;
+  flex-wrap: wrap;
+}
+li,ul{
+  list-style: none;
+  margin: 7px;
+}
+li :hover{
+  margin-left: 9px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.list h3,p{
+  padding-left: 50px;
+}
+.footer{
+  background-color: rgb(107, 25, 184);
+  display: flex;
+
+}
+.email{
+  width: 190px;
+  height: auto;
+  margin: 40px;
+  height: 20px;
+  display: flex;
+}
+.email button{
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 1px 1px 10px rgba(57, 57, 57, 0.464);
+  background-color:rgb(107, 25, 184) ;
+}
+input{
+  background-color: rgba(241, 236, 247, 0.144);
+  border-radius: 10px;
+  width: 300px;
+  display: inline-block;   
+}
+.footer img{
+  height: 30px;
+  padding: 7px;
+}
