@@ -3,11 +3,13 @@
 body {
   background-color: blue;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 nav {
   width: 100%;
   display: flex;
@@ -19,14 +21,17 @@ nav {
   font-family: "Poppins", sans-serif;
   position: relative;
 }
+
 .logo-miu img {
   width: 280px;
 }
+
 .main-menu {
   display: flex;
   margin-right: 50px;
   list-style: none;
 }
+
 .main-menu a {
   text-decoration: none;
   color: black;
@@ -37,15 +42,18 @@ nav {
   display: flex;
   align-items: center;
 }
-.main-menu > li > a:hover,
+
+.main-menu>li>a:hover,
 a.active {
   background-color: rgb(249, 215, 215);
 }
+
 .main-menu li a i {
   position: relative;
   top: 2px;
   left: 5px;
 }
+
 .sub-menu {
   position: absolute;
   top: 100%;
@@ -53,30 +61,38 @@ a.active {
   display: none;
   list-style: none;
   background-color: #fff;
+  z-index: 199;
 }
+
 .sub-menu li:not(:last-child) {
   border-bottom: 1px solid #d6d4d4;
 }
+
 .sub-menu a {
   height: 50px;
 }
+
 .sub-menu a:hover {
   background-color: rgb(249, 215, 215);
 }
+
 @keyframes fadein {
   from {
     top: 105%;
     opacity: 0;
   }
+
   to {
     top: 100%;
     opacity: 1;
   }
 }
+
 .humberger {
   display: none;
   margin-right: 100px;
 }
+
 .first,
 .second,
 .third {
@@ -85,17 +101,21 @@ a.active {
   background-color: black;
   display: block;
 }
+
 .second {
   margin: 5px 0;
 }
+
 @media (max-width: 930px) {
   .humberger {
     display: block;
   }
+
   .humberger:hover .second {
     opacity: 0;
     transition: 0.5s;
   }
+
   .humberger:hover .first,
   .humberger:hover .third {
     background-color: red;
@@ -103,14 +123,17 @@ a.active {
     position: relative;
     /* transform-origin: 50% ; */
   }
+
   .humberger:hover .first {
     transform: rotate(45deg);
     top: 7.5px;
   }
+
   .humberger:hover .third {
     transform: rotate(-45deg);
     top: -7.5px;
   }
+
   .main-menu {
     display: none;
     flex-direction: column;
@@ -121,16 +144,20 @@ a.active {
     right: 0;
     margin: 0;
   }
-  .main-menu > li > a:hover,
+
+  .main-menu>li>a:hover,
   a.active {
     background: none;
   }
+
   .main-menu li:not(:last-child) {
     border-bottom: 1px solid #d6d4d4;
   }
+
   .main-menu a {
     height: 50px;
   }
+
   .sub-menu {
     position: absolute;
     top: 100%;
@@ -139,59 +166,141 @@ a.active {
     display: none;
     list-style: none;
     background-color: rgba(255, 255, 255, 0.5);
+    z-index: 199;
   }
 }
+
+/* start of image slider */
+.slider {
+  position: relative;
+  background: #000116;
+  width: 100vw;
+  min-height: 600px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.15);
+  transform: opacity .6s ease;
+}
+
+.slider::after {
+  background-color: #000;
+  content: '';
+  position: absolute;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.slide.active {
+  animation: grow 4s linear forwards;
+  opacity: 1;
+}
+
+@keyframes grow {
+
+  0%,
+  20% {
+    transform: scale(1);
+  }
+
+  75%,
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.slider .slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .slider {
+    width: 100%;
+  }
+}
+
+/* end of image slider */
 /* footer */
-footer{
-  position:absolute;
-  bottom:0;
+footer {
+  position: absolute;
+  bottom: 0;
   background-color: blueviolet;
   width: 100%;
   left: 0;
 }
-.list{
+
+.list {
   display: flex;
   flex-wrap: wrap;
 }
-li,ul{
+
+li,
+ul {
   list-style: none;
   margin: 7px;
 }
-li :hover{
+
+li :hover {
   margin-left: 9px;
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
 }
-.list h3,p{
+
+.list h3,
+p {
   padding-left: 50px;
 }
-.footer{
+
+.footer {
   background-color: rgb(107, 25, 184);
   display: flex;
 
 }
-.email{
+
+.email {
   width: 190px;
   height: auto;
   margin: 40px;
   height: 20px;
   display: flex;
 }
-.email button{
+
+.email button {
   border-radius: 10px;
   border-style: none;
   box-shadow: 1px 1px 10px rgba(57, 57, 57, 0.464);
-  background-color:rgb(107, 25, 184) ;
+  background-color: rgb(107, 25, 184);
 }
-input{
+
+input {
   background-color: rgba(241, 236, 247, 0.144);
   border-radius: 10px;
   width: 300px;
-  display: inline-block;   
+  display: inline-block;
 }
-.footer img{
+
+.footer img {
   height: 30px;
   padding: 7px;
 }
